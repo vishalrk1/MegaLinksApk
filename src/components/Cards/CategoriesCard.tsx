@@ -1,7 +1,6 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {Category} from '../../redux/types';
-import { IMAGE_PATHS } from '../../utils/CategoriesData';
 
 interface CategoriesCardProps {
   catItem: Category;
@@ -9,18 +8,25 @@ interface CategoriesCardProps {
 
 const CategoriesCard: React.FC<CategoriesCardProps> = ({catItem}) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.image}>
-        <Image
-          source={require(`${catItem.imageUrl}`)}
-          style={{width: '100%', height: '100%', borderRadius: 50, objectFit: 'cover'}}
-        />
+    <Pressable>
+      <View style={styles.container}>
+        <View style={styles.image}>
+          <Image
+            source={{uri: catItem.imageUrl}}
+            style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: 50,
+              objectFit: 'cover',
+            }}
+          />
+        </View>
+        <View style={{marginHorizontal: 10, flex: 1, width: '100%'}}>
+          <Text style={styles.title}>{catItem.name}</Text>
+          <Text style={styles.description}>{catItem.description}</Text>
+        </View>
       </View>
-      <View style={{marginHorizontal: 10, flex: 1, width: '100%'}}>
-        <Text style={styles.title}>{catItem.name}</Text>
-        <Text style={styles.description}>{catItem.description}</Text>
-      </View>
-    </View>
+    </Pressable>
   );
 };
 
