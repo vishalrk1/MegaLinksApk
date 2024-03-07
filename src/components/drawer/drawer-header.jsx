@@ -5,8 +5,8 @@ const DrawerHeader = () => {
   return (
     <View
       style={{
-        flex: 0.5,
-        backgroundColor: 'oldlace',
+        flex: 0.6,
+        backgroundColor: 'black',
         justifyContent: 'center',
       }}>
       {/* {isLoggedIn ? (
@@ -47,6 +47,14 @@ const DrawerHeader = () => {
         </View>
       ) : ( */}
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Image
+          style={{
+            height: '60%',
+            width: '60%',
+            objectFit: 'contain',
+          }}
+          source={require('../../assets/logo/M3.jpg')}
+        />
         <Text
           style={{
             fontSize: 20,

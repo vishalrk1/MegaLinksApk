@@ -8,15 +8,16 @@ import ProjectfilesScreen from './Projectfiles/ProjectfilesScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CurstomDrawer from '../components/drawer/Drawer';
+import AboutScreen from './AboutScreen/AboutScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigator = () => {
   return (
-    <Drawer.Navigator initialRouteName="Home"
-        drawerContent={(props) => <CurstomDrawer {...props} />}
-    >
+    <Drawer.Navigator
+      initialRouteName="Home"
+      drawerContent={props => <CurstomDrawer {...props} />}>
       <Drawer.Screen
         name="Home"
         component={HomeScreen}
@@ -30,6 +31,15 @@ export const DrawerNavigator = () => {
           },
           headerTitleAlign: 'center',
           headerTitle: '',
+        }}
+      />
+      <Drawer.Screen
+        name="About Us"
+        component={AboutScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerTintColor: '#fff',
         }}
       />
     </Drawer.Navigator>
