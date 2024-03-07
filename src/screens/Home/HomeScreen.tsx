@@ -12,11 +12,6 @@ const HomeScreen = () => {
         <Text style={styles.headingTextStyle}>MEGA LINKS</Text>
       </View>
       <CategoriesSection />
-      {/* <View style={styles.categoriesSectionStyle}>
-        {CATEGORIES_DATA.map((item, index) => {
-          return <CategoriesCard key={index} catItem={item} />;
-        })}
-      </View> */}
     </SafeAreaView>
   );
 };

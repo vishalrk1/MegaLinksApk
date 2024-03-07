@@ -1,14 +1,20 @@
 import React from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {Category} from '../../redux/types';
+import {useNavigation} from '@react-navigation/native';
 
-interface CategoriesCardProps {
-  catItem: Category;
-}
-
-const CategoriesCard: React.FC<CategoriesCardProps> = ({catItem}) => {
+const CategoriesCard = ({catItem}) => {
+  const navigation = useNavigation();
   return (
-    <Pressable>
+    <Pressable
+      onPress={() =>
+        navigation.navigate(catItem.screenName, {
+          catId: catItem.id,
+          catName: catItem.name,
+          catImageUrl: catItem.imageUrl,
+          catDescription: catItem.description,
+        })
+      }>
       <View style={styles.container}>
         <View style={styles.image}>
           <Image

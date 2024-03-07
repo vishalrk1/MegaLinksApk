@@ -20,6 +20,7 @@ export interface Category {
   name: string;
   imageUrl: string;
   description: string;
+  screenName: string;
 }
 
 export interface Tutorial {

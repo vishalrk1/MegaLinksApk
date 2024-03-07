@@ -1,10 +1,16 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import 'react-native-gesture-handler';
 
-import HomeScreen from './screens/Home/HomeScreen';
+import React from 'react';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {DrawerNavigator, StackNavigator} from './screens/Navigator';
 
 function App(): React.JSX.Element {
-  return <HomeScreen />;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
 
 export default App;
