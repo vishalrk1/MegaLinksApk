@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginBottom: 30,
     // borderBottomWidth: 1,
     // borderBottomColor: 'gray',
     // borderBottomStyle: 'dotted',

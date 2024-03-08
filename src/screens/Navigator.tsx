@@ -9,6 +9,8 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CurstomDrawer from '../components/drawer/Drawer';
 import AboutScreen from './AboutScreen/AboutScreen';
+import SubmitDataScreen from './Submitdata/SubmitDataScreen';
+import FeedbackScreen from './Feedbacks/FeedBackScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -31,6 +33,24 @@ export const DrawerNavigator = () => {
           },
           headerTitleAlign: 'center',
           headerTitle: '',
+        }}
+      />
+      <Drawer.Screen
+        name="Submit Your Data"
+        component={SubmitDataScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerTintColor: '#fff',
+        }}
+      />
+      <Drawer.Screen
+        name="User Feedbacks"
+        component={FeedbackScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerTintColor: '#fff',
         }}
       />
       <Drawer.Screen

@@ -62,3 +62,10 @@ export interface Session {
   status: string | null;
   error: string | null;
 }
+
+export interface FormTile {
+  id: string;
+  title: string;
+  description: string;
+  screenName: string;
+}

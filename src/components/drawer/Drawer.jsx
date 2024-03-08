@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
 import DrawerHeader from './drawer-header';
-import {Home, CircleUser} from 'lucide-react-native';
+import {Home, CircleUser, UploadCloud, MessageSquareShare} from 'lucide-react-native';
 import DrawerFooter from './drawer-footer';
 import DrawerListItem from './DrawerListItem';
 import {AppColors} from '../../utils/Constants';
@@ -32,6 +32,24 @@ const CurstomDrawer = props => {
             } else if (item.name === 'About Us') {
               icon = (
                 <CircleUser
+                  size={22}
+                  style={{
+                    color: props.state.index === index ? 'white' : 'black',
+                  }}
+                />
+              );
+            } else if (item.name === 'Submit Your Data') {
+              icon = (
+                <UploadCloud
+                  size={22}
+                  style={{
+                    color: props.state.index === index ? 'white' : 'black',
+                  }}
+                />
+              );
+            } else if (item.name === 'User Feedbacks') {
+              icon = (
+                <MessageSquareShare
                   size={22}
                   style={{
                     color: props.state.index === index ? 'white' : 'black',

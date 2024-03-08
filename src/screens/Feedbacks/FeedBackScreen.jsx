@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, ScrollView, StyleSheet, View} from 'react-native';
 
-const AboutScreen = () => {
+const FeedbackScreen = () => {
   return (
     <ScrollView style={styles.backgroundStyle}>
       <View
@@ -9,7 +9,7 @@ const AboutScreen = () => {
           height: 250,
         }}>
         <Image
-          source={require('../../assets/Banners/AboutHeader.jpg')}
+          source={require('../../assets/Banners/FeedbackHeader.jpg')}
           style={{
             height: '100%',
             width: '100%',
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AboutScreen;
+export default FeedbackScreen;

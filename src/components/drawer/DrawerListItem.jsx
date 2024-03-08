@@ -20,6 +20,7 @@ const DrawerListItem = ({
           justifyContent: 'flex-start',
           padding: 12,
           marginHorizontal: 10,
+          marginVertical: 2,
           borderRadius: 10,
           backgroundColor: bgColor,
         }}>
@@ -28,7 +29,7 @@ const DrawerListItem = ({
           style={{
             color: titleColor,
             fontWeight: fontWeight,
-            fontSize: 18,
+            fontSize: 16,
             marginLeft: 10,
           }}>
           {nameTitle}
