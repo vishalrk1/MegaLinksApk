@@ -11,6 +11,7 @@ import CurstomDrawer from '../components/drawer/Drawer';
 import AboutScreen from './AboutScreen/AboutScreen';
 import SubmitDataScreen from './Submitdata/SubmitDataScreen';
 import FeedbackScreen from './Feedbacks/FeedBackScreen';
+import EditingToolDropdown from '../components/Dropdown/Dropdown';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -106,7 +107,9 @@ export const StackNavigator = () => {
       <Stack.Screen
         name="EditingTutorialsScreen"
         component={TutorialsScreen}
-        options={{headerTitle: 'Editing Tutorials'}}
+        options={{
+          headerTitle: 'Editing Tutorials',
+        }}
       />
       <Stack.Screen
         name="ProjectFilesScreen"

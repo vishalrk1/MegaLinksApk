@@ -5,9 +5,11 @@ import {Provider} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {DrawerNavigator, StackNavigator} from './screens/Navigator';
 import {store} from './redux/store';
+import {PaperProvider} from 'react-native-paper';
 
 function App(): React.JSX.Element {
   return (
+    // <PaperProvider>
     <Provider store={store}>
       <NavigationContainer>
         <StackNavigator />

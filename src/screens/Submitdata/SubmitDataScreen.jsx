@@ -3,7 +3,6 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
-  SectionList,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -39,7 +38,7 @@ const SubmitDataScreen = () => {
           }}>
           Share Your Packs with us 😎!
         </Text>
-        <Text style={{fontSize: 16, fontWeight: '600'}}>
+        <Text style={{fontSize: 16, fontWeight: '500'}}>
           {SUBMIT_SCREEN_DESCRIPTION}
         </Text>
         {FORMS_TILE_DATA.map((item, index) => (
@@ -53,7 +52,7 @@ const SubmitDataScreen = () => {
               <Text style={{fontSize: 18, fontWeight: '600', color: 'black'}}>
                 {item.title}
               </Text>
-              <Text style={{fontSize: 14, fontWeight: '400', color: 'gray'}}>
+              <Text style={{fontSize: 14, fontWeight: '500', color: 'gray'}}>
                 {item.description}
               </Text>
             </View>
@@ -78,7 +77,15 @@ const styles = StyleSheet.create({
     marginTop: 10,
     padding: 20,
     borderRadius: 18,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
   },
 });
 
