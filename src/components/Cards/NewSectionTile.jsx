@@ -7,6 +7,7 @@ const NewSectionTile = ({item}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
+      activeOpacity={0.3}
       style={styles.card}
       onPress={() => navigation.navigate(item.screenName)}>
       <View

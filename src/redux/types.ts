@@ -69,3 +69,9 @@ export interface FormTile {
   description: string;
   screenName: string;
 }
+
+export interface InstaDetails {
+  username: string;
+  igLink: string;
+  title: string;
+}

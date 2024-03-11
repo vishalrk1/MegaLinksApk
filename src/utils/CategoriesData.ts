@@ -1,4 +1,4 @@
-import {Category, FormTile} from '../redux/types';
+import {Category, FormTile, InstaDetails} from '../redux/types';
 
 export const CATEGORIES_DATA = [
   {
@@ -76,3 +76,21 @@ export const FEEDBACK_FORMS_TILE_DATA = [
     screenName: 'UserFeedbackFormScreen',
   },
 ] as FormTile[];
+
+export const SOCIALS_DATA = [
+  {
+    title: 'Official Instagram Page',
+    igLink: 'https://www.instagram.com/megalinks.official/',
+    username: 'megalinks_official',
+  },
+  {
+    title: 'Developer',
+    igLink: 'https://www.instagram.com/editor_dragon/',
+    username: 'editor_dragon',
+  },
+  {
+    title: 'Developer',
+    igLink: 'https://www.instagram.com/am_aep/',
+    username: 'Am_aep',
+  },
+] as InstaDetails[];

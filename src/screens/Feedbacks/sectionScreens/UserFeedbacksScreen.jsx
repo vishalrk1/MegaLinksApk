@@ -58,13 +58,13 @@ const UserFeedbackScreen = () => {
                     borderRadius: 100,
                     backgroundColor: 'whitesmoke',
                   }}>
-                  <UserRound size={16} color="#000" />
+                  <UserRound size={16} color="black" />
                 </View>
-                <Text style={{fontWeight: 'bold', fontSize: 18}}>
+                <Text style={{fontWeight: '500', fontSize: 18, color: 'black'}}>
                   {feedback.userName}
                 </Text>
               </View>
-              <Text style={{fontSize: 16, color: 'grey'}}>
+              <Text style={{fontSize: 16, color: 'gray', fontWeight: '600'}}>
                 {feedback.message}
               </Text>
             </View>
