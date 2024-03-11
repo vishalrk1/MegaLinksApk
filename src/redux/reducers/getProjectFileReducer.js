@@ -1,8 +1,5 @@
-import {
-  FETCH_PROJECT_FIEL_FAILURE,
-  FETCH_PROJECT_FIEL_REQUEST,
-  FETCH_PROJECT_FIEL_SUCESS,
-} from '../ActionTypes';
+import { FETCH_PROJECT_FILE_FAILURE, FETCH_PROJECT_FILE_REQUESTB, FETCH_PROJECT_FILE_SUCCESS } from "../ActionTypes";
+
 
 const initialState = {
   projectFiles: [],
@@ -13,18 +10,18 @@ const initialState = {
 
 export const getProjectFileReducer = (state = initialState, ation) => {
   switch (ation.type) {
-    case FETCH_PROJECT_FIEL_REQUEST:
+    case FETCH_PROJECT_FILE_REQUESTB:
       return {
         ...state,
         fetching: true,
       };
-    case FETCH_PROJECT_FIEL_SUCESS:
+    case FETCH_PROJECT_FILE_SUCCESS:
       return {
         ...state,
         projectFiles: ation.payload,
         fetching: false,
       };
-    case FETCH_PROJECT_FIEL_FAILURE:
+    case FETCH_PROJECT_FILE_FAILURE:
       return {
         ...state,
         fetching: false,

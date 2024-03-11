@@ -2,20 +2,20 @@ import {Category, FormTile} from '../redux/types';
 
 export const CATEGORIES_DATA = [
   {
-    id: '1',
-    name: 'Anime Raws',
-    imageUrl:
-      'https://firebasestorage.googleapis.com/v0/b/editing-app-de1f1.appspot.com/o/CATEGORIES-IMAGES%2FCat1.jpg?alt=media&token=1ddf79a5-0b72-4e2c-aa1b-df41657a7fd1',
-    description: 'Get high quality anime raws here',
-    screenName: 'AnimeRawsScreen',
-  },
-  {
     id: '2',
     name: 'Scene Packs',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/editing-app-de1f1.appspot.com/o/CATEGORIES-IMAGES%2FCat3.jpg?alt=media&token=3a0f9869-a34e-4cc2-b1ef-99ba487197d5',
     description: 'movies, web series characters scene packs',
     screenName: 'ScenePackScreen',
+  },
+  {
+    id: '1',
+    name: 'Anime Raws',
+    imageUrl:
+      'https://firebasestorage.googleapis.com/v0/b/editing-app-de1f1.appspot.com/o/CATEGORIES-IMAGES%2FCat1.jpg?alt=media&token=1ddf79a5-0b72-4e2c-aa1b-df41657a7fd1',
+    description: 'Get high quality anime raws here',
+    screenName: 'AnimeRawsScreen',
   },
   {
     id: '3',

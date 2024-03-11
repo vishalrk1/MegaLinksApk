@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {AppColors} from '../../utils/Constants';
 import CatPageHeader from '../../components/CatPageHeader';
-import {getProjectFileAction} from '../../redux/actions/getProjectFileAction';
+import { fetchProjectFileAction } from '../../redux/actions/getProjectFileAction';
 
 const ProjectfilesScreen = ({route, navigation}) => {
   const {catId, catName, catImageUrl, catDescription} = route.params;
@@ -11,7 +11,7 @@ const ProjectfilesScreen = ({route, navigation}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProjectFileAction());
+    dispatch(fetchProjectFileAction());
   }, []);
 
   console.log('projectFiles', projectFiles);
