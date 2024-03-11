@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import { AppColors } from '../../utils/Constants';
 
 const FormCardWrapper = ({children, headerTitle, onPressSubmit}) => {
   return (
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
   btnStyle: {
     padding: 10,
     paddingHorizontal: 20,
-    backgroundColor: 'coral',
+    backgroundColor: AppColors.blueBg,//'coral',
     borderRadius: 10,
     width: '100%',
     alignItems: 'center',

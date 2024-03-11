@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {AppColors} from '../../utils/Constants';
 import CatPageHeader from '../../components/CatPageHeader';
+import {getProjectFileAction} from '../../redux/actions/getProjectFileAction';
 
 const ProjectfilesScreen = ({route, navigation}) => {
   const {catId, catName, catImageUrl, catDescription} = route.params;
+  const {projectFiles, fetching, error} = useSelector(state => state.getProjectFiles);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProjectFileAction());
+  }, []);
+
+  console.log('projectFiles', projectFiles);
+  console.log('fetching', fetching);
+
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <View style={styles.pageSectionStyle}>

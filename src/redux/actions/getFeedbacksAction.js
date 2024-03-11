@@ -11,7 +11,6 @@ export const fetchUserFeedbackAction = () => async dispatch => {
   });
   try {
     let {data: Feedback, error} = await supabase.from('Feedback').select('*');
-    console.log('Action file',Feedback);
     if (error) throw error;
     dispatch({
       type: FETCH_USER_FEEDBACKS_SUCCESS,
