@@ -12,6 +12,9 @@ import AboutScreen from './AboutScreen/AboutScreen';
 import SubmitDataScreen from './Submitdata/SubmitDataScreen';
 import FeedbackScreen from './Feedbacks/FeedBackScreen';
 import EditingToolDropdown from '../components/Dropdown/Dropdown';
+import UserFeedbackScreen from './Feedbacks/sectionScreens/UserFeedbacksScreen';
+import UserFeedbackFormScreen from './Feedbacks/sectionScreens/UserFeedbackFormScreen';
+import ScenePackFormScreen from './Scenepack/FormScreen/ScenePackFormScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -115,6 +118,21 @@ export const StackNavigator = () => {
         name="ProjectFilesScreen"
         component={ProjectfilesScreen}
         options={{headerTitle: 'Project Files'}}
+      />
+      <Stack.Screen
+        name="UserFeedbackScreen"
+        component={UserFeedbackScreen}
+        options={{headerTitle: 'User Feedbacks'}}
+      />
+      <Stack.Screen
+        name="UserFeedbackFormScreen"
+        component={UserFeedbackFormScreen}
+        options={{headerTitle: 'Add your feedback'}}
+      />
+      <Stack.Screen
+        name="ScenePackFormScreen"
+        component={ScenePackFormScreen}
+        options={{headerTitle: 'Add your Scene Pack'}}
       />
     </Stack.Navigator>
   );

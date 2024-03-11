@@ -61,3 +61,18 @@ export const FORMS_TILE_DATA = [
     screenName: 'ProjectFilesFormScreen',
   },
 ] as FormTile[];
+
+export const FEEDBACK_FORMS_TILE_DATA = [
+  {
+    id: '1',
+    title: 'Read All Feedbacks',
+    description: 'Checkout what people are saying about us',
+    screenName: 'UserFeedbackScreen',
+  },
+  {
+    id: '2',
+    title: 'Submit you feedback',
+    description: 'Tell us what you think about us',
+    screenName: 'UserFeedbackFormScreen',
+  },
+] as FormTile[];

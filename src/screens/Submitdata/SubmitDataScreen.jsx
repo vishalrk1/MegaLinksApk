@@ -8,9 +8,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {ChevronRight} from 'lucide-react-native';
 import {SUBMIT_SCREEN_DESCRIPTION} from '../../utils/Constants';
 import {FORMS_TILE_DATA} from '../../utils/CategoriesData';
+import NewSectionTile from '../../components/Cards/NewSectionTile';
 
 const SubmitDataScreen = () => {
   return (
@@ -42,22 +42,7 @@ const SubmitDataScreen = () => {
           {SUBMIT_SCREEN_DESCRIPTION}
         </Text>
         {FORMS_TILE_DATA.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.card} onPress={() => {}}>
-            <View
-              style={{
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-              }}>
-              <Text style={{fontSize: 18, fontWeight: '600', color: 'black'}}>
-                {item.title}
-              </Text>
-              <Text style={{fontSize: 14, fontWeight: '500', color: 'gray'}}>
-                {item.description}
-              </Text>
-            </View>
-            <ChevronRight size={36} color={'gray'} />
-          </TouchableOpacity>
+          <NewSectionTile item={item} key={index} />
         ))}
       </SafeAreaView>
     </ScrollView>
@@ -69,23 +54,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: '100%',
     flex: 1,
-  },
-  card: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 10,
-    padding: 20,
-    borderRadius: 18,
-    backgroundColor: 'white',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 2,
   },
 });
 
