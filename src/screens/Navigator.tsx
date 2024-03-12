@@ -15,6 +15,7 @@ import EditingToolDropdown from '../components/Dropdown/Dropdown';
 import UserFeedbackScreen from './Feedbacks/sectionScreens/UserFeedbacksScreen';
 import UserFeedbackFormScreen from './Feedbacks/sectionScreens/UserFeedbackFormScreen';
 import ScenePackFormScreen from './Scenepack/FormScreen/ScenePackFormScreen';
+import AnimeRawsFormScreen from './Animeraws/FormsScreen/AnimeRawsFormScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -133,6 +134,11 @@ export const StackNavigator = () => {
         name="ScenePackFormScreen"
         component={ScenePackFormScreen}
         options={{headerTitle: 'Add your Scene Pack'}}
+      />
+      <Stack.Screen
+        name="AnimeRawsFormScreen"
+        component={AnimeRawsFormScreen}
+        options={{headerTitle: 'Add your Anime Pack'}}
       />
     </Stack.Navigator>
   );

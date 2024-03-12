@@ -5,14 +5,13 @@ import FormCardWrapper from '../../../components/Forms/FormCardWrapper';
 import ErrorMessage from '../../../components/ErrorMessage';
 import CatPageHeader from '../../../components/CatPageHeader';
 import {CATEGORIES_DATA} from '../../../utils/CategoriesData';
-import { AppColors } from '../../../utils/Constants';
+import {AppColors} from '../../../utils/Constants';
 
-const ScenePackFormScreen = () => {
-  const category = CATEGORIES_DATA[0];
+const AnimeRawsFormScreen = () => {
+  const category = CATEGORIES_DATA[1];
   const [label, setLabel] = useState('');
   const [packUrl, setPackUrl] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [credit, setCredit] = useState('');
+  const [description, setDescription] = useState('');
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -21,13 +20,9 @@ const ScenePackFormScreen = () => {
 
   const handleSubmit = () => {
     setError(false);
-    if (!label || !packUrl || !imageUrl || !credit) {
+    if (!label || !packUrl || !description) {
       setError(true);
       setErrorMessage('Please fill all the fields !!');
-      return;
-    } else if (!imageExtensionRegex.test(imageUrl)) {
-      setError(true);
-      setErrorMessage('Incorrect Image Link !!');
       return;
     } else if (!urlRegex.test(packUrl)) {
       setError(true);
@@ -38,10 +33,10 @@ const ScenePackFormScreen = () => {
     const payload = {
       label: label,
       packUrl: packUrl,
-      imageUrl: imageUrl,
-      credit: credit,
-      categoryId: 'd5ce972f-6454-4638-a765-c9adf9e6094b',
+      description: description,
+      categoryId: '2a54818c-0c2e-4231-9449-9eb1840b60c6',
       isApproved: true,
+      isFeatured: false,
     };
   };
 
@@ -50,7 +45,7 @@ const ScenePackFormScreen = () => {
       style={{
         flex: 1,
         backgroundColor: '#fff',
-        paddingHorizontal: 4
+        paddingHorizontal: 4,
       }}>
       <View style={{...styles.cardStyle, flex: 1}}>
         <CatPageHeader
@@ -65,7 +60,7 @@ const ScenePackFormScreen = () => {
           onPressSubmit={handleSubmit}>
           <View style={{flexDirection: 'column', gap: 12}}>
             <TextInput
-              label="Character Name"
+              label="Anime Name"
               mode="outlined"
               style={styles.nameInput}
               value={label}
@@ -74,26 +69,23 @@ const ScenePackFormScreen = () => {
             />
             <TextInput
               mode="outlined"
-              label="Scenepack link"
+              label="Pack link"
               style={styles.nameInput}
               value={packUrl}
               onChangeText={setPackUrl}
               activeOutlineColor={AppColors.blueBg}
             />
             <TextInput
-              label="Image Link"
+              label="Description"
               mode="outlined"
-              style={styles.nameInput}
-              value={imageUrl}
-              onChangeText={setImageUrl}
-              activeOutlineColor={AppColors.blueBg}
-            />
-            <TextInput
-              label="Credits"
-              mode="outlined"
-              style={styles.nameInput}
-              value={credit}
-              onChangeText={setCredit}
+              numberOfLines={3}
+              style={{
+                height: 100,
+                textAlignVertical: 'top',
+                textAlign: 'left',
+              }}
+              value={description}
+              onChangeText={setDescription}
               activeOutlineColor={AppColors.blueBg}
             />
           </View>
@@ -139,4 +131,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScenePackFormScreen;
+export default AnimeRawsFormScreen;

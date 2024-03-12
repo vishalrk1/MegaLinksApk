@@ -62,10 +62,7 @@ const AboutScreen = () => {
       <SafeAreaView style={{padding: 10}}>
         <Text style={styles.titleStyle}>Discord Community</Text>
         <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() =>
-            openUrlInBrowser('https://discord.com/invite/PjfJsh9ty3')
-          }
+          activeOpacity={1}
           style={{...styles.dcCard, flexDirection: 'column', gap: 4}}>
           <Image
             source={require('../../assets/socials/discord.png')}
@@ -79,6 +76,9 @@ const AboutScreen = () => {
           />
           <TouchableOpacity
             activeOpacity={1}
+            onPress={() =>
+              openUrlInBrowser('https://discord.com/invite/PjfJsh9ty3')
+            }
             style={{
               width: '100%',
               paddingVertical: 10,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 2,
+    elevation: 1,
   },
 });
 
