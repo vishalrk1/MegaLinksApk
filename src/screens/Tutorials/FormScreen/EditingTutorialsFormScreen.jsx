@@ -21,7 +21,7 @@ const EditingTutorialsFormScreen = () => {
 
   const handleSubmit = () => {
     setError(false);
-    if (!label || !ytUrl || !description) {
+    if (!label || !ytUrl) {
       setError(true);
       setErrorMessage('Please fill all the fields !!');
       return;
@@ -61,7 +61,7 @@ const EditingTutorialsFormScreen = () => {
           onPressSubmit={handleSubmit}>
           <View style={{flexDirection: 'column', gap: 12}}>
             <TextInput
-              label="Anime Name"
+              label="Tutorial Name"
               mode="outlined"
               style={styles.nameInput}
               value={label}
@@ -70,23 +70,10 @@ const EditingTutorialsFormScreen = () => {
             />
             <TextInput
               mode="outlined"
-              label="Pack link"
+              label="Tutorial Link"
               style={styles.nameInput}
-              value={packUrl}
-              onChangeText={setPackUrl}
-              activeOutlineColor={AppColors.blueBg}
-            />
-            <TextInput
-              label="Description"
-              mode="outlined"
-              numberOfLines={3}
-              style={{
-                height: 100,
-                textAlignVertical: 'top',
-                textAlign: 'left',
-              }}
-              value={description}
-              onChangeText={setDescription}
+              value={ytUrl}
+              onChangeText={setYtUrl}
               activeOutlineColor={AppColors.blueBg}
             />
           </View>
@@ -102,13 +89,14 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 12,
     fontSize: 16,
+    backgroundColor: 'white',
   },
   messageInput: {
     height: 90,
     width: '100%',
     borderWidth: 1,
     borderColor: 'gray',
-    borderRadius: 8,
+    borderRadius: 16,
     paddingHorizontal: 16,
     paddingVertical: 12,
   },

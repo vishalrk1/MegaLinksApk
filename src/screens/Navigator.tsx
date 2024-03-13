@@ -16,6 +16,7 @@ import UserFeedbackScreen from './Feedbacks/sectionScreens/UserFeedbacksScreen';
 import UserFeedbackFormScreen from './Feedbacks/sectionScreens/UserFeedbackFormScreen';
 import ScenePackFormScreen from './Scenepack/FormScreen/ScenePackFormScreen';
 import AnimeRawsFormScreen from './Animeraws/FormsScreen/AnimeRawsFormScreen';
+import EditingTutorialsFormScreen from './Tutorials/FormScreen/EditingTutorialsFormScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -101,7 +102,9 @@ export const StackNavigator = () => {
       <Stack.Screen
         name="ScenePackScreen"
         component={SceenpackScreen}
-        options={{headerTitle: 'Scene Pack'}}
+        options={{
+          headerTitle: 'Scene Pack',
+        }}
       />
       <Stack.Screen
         name="AnimeRawsScreen"
@@ -139,6 +142,11 @@ export const StackNavigator = () => {
         name="AnimeRawsFormScreen"
         component={AnimeRawsFormScreen}
         options={{headerTitle: 'Add your Anime Pack'}}
+      />
+      <Stack.Screen
+        name="EditingTutorialsFormScreen"
+        component={EditingTutorialsFormScreen}
+        options={{headerTitle: 'Share Tutorials'}}
       />
     </Stack.Navigator>
   );
