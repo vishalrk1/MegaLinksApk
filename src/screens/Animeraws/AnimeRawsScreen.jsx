@@ -21,7 +21,9 @@ const AnimeRawsScreen = ({route, navigation}) => {
   const {animeRaws, fetching} = useSelector(state => state.getAnimeRaws);
 
   useEffect(() => {
-    dispatch(fetchAnimeRaw());
+    if (animeRaws.length === 0) {
+      dispatch(fetchAnimeRaw());
+    }
   }, []);
 
   return (

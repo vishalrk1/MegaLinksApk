@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   editingTools: [],
-  fetching: false,
+  fetching: true,
   error: null,
 };
 

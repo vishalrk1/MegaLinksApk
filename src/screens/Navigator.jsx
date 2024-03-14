@@ -17,6 +17,12 @@ import UserFeedbackFormScreen from './Feedbacks/sectionScreens/UserFeedbackFormS
 import ScenePackFormScreen from './Scenepack/FormScreen/ScenePackFormScreen';
 import AnimeRawsFormScreen from './Animeraws/FormsScreen/AnimeRawsFormScreen';
 import EditingTutorialsFormScreen from './Tutorials/FormScreen/EditingTutorialsFormScreen';
+import SplashScreen from './splashScreen/SplashScreen';
+import {useDispatch, useSelector} from 'react-redux';
+import {useEffect, useState} from 'react';
+import {fetchScenePacks} from '../redux/actions/scenepackAction';
+import {fetchEditingTools} from '../redux/actions/getEditinToolAction';
+import {fetchTutorials} from '../redux/actions/getTutorialsAction';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -75,6 +81,7 @@ export const DrawerNavigator = () => {
 export const StackNavigator = () => {
   return (
     <Stack.Navigator
+      initialRouteName={'HomeDrawer'}
       screenOptions={{
         headerStyle: {
           backgroundColor: AppColors.blueBg,
@@ -94,6 +101,11 @@ export const StackNavigator = () => {
         headerTitleAlign: 'center',
         headerBackTitleVisible: false,
       }}>
+      <Stack.Screen
+        name="SplashScreen"
+        component={SplashScreen}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="HomeDrawer"
         component={DrawerNavigator}

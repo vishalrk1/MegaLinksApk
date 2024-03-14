@@ -2,14 +2,12 @@ import React from 'react';
 import {ScrollView, StyleSheet, Text, TouchableHighlight} from 'react-native';
 
 const TutorialFilters = ({editingTools, selectedToolId, setSelectedToolId}) => {
-  console.log(selectedToolId);
   return (
     <ScrollView
       horizontal
       style={{height: 60, marginBottom: 12, paddingHorizontal: 12}}
       showsHorizontalScrollIndicator={false}>
       {editingTools.map((item, index) => {
-        console.log(item);
         return (
           <TouchableHighlight
             onPress={() => setSelectedToolId(item.id)}

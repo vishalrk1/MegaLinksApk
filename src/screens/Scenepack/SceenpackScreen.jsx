@@ -21,14 +21,30 @@ import {Search} from 'lucide-react-native';
 const SceenpackScreen = ({route, navigation}) => {
   const {catId, catName, catImageUrl, catDescription} = route.params;
   const dispatch = useDispatch();
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const {scenePacks, fetching} = useSelector(state => state.getScenepack);
   const [filteredPacks, setFilteredPacks] = useState(scenePacks);
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    // dispatch(fetchScenePacks());
-  }, []);
+    if (scenePacks.length === 0) {
+      console.log('getting packs.../');
+      dispatch(fetchScenePacks());
+    } else {
+      setFilteredPacks(scenePacks);
+    }
+  }, [scenePacks]);
+
+  useEffect(() => {
+    setIsSearching(true);
+    if (query !== '') {
+      filterData(query);
+    } else {
+      setFilteredPacks(scenePacks);
+      setIsSearching(false);
+    }
+  }, [query]);
 
   React.useEffect(() => {
     navigation.setOptions({
@@ -37,26 +53,29 @@ const SceenpackScreen = ({route, navigation}) => {
           color="white"
           size={20}
           style={{marginHorizontal: 12, marginRight: 16}}
-          onPress={() => setIsSearching(!isSearching)}
+          onPress={() => {
+            if (showSearchBar) {
+              setQuery('');
+            }
+            setShowSearchBar(!showSearchBar);
+          }}
         />
       ),
     });
-  }, [navigation, isSearching]);
+  }, [navigation, showSearchBar]);
 
   const filterData = query => {
-    console.log(query);
-    const filteredData = scenePacks.filter(item => {
-      const itemData = item.label ? item.label.toUpperCase() : ''.toUpperCase();
-      const textData = query;
-      return itemData.includes(textData);
+    const filterData = scenePacks.filter(item => {
+      return item.label.toLowerCase().includes(query.toLowerCase());
     });
     setFilteredPacks(filterData);
+    setIsSearching(false);
   };
 
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <View>
-        {isSearching && (
+        {showSearchBar && (
           <TextInput
             onChangeText={query => setQuery(query)}
             value={query}
@@ -80,7 +99,7 @@ const SceenpackScreen = ({route, navigation}) => {
             catDescription={catDescription}
           />
         </View>
-        {fetching ? (
+        {fetching || isSearching ? (
           <View
             style={{
               height: '50%',
@@ -98,7 +117,7 @@ const SceenpackScreen = ({route, navigation}) => {
           <FlatList
             style={{width: '100%', paddingVertical: 10}}
             showsVerticalScrollIndicator={false}
-            data={scenePacks}
+            data={filteredPacks}
             renderItem={({item}) => <ScenepackCard item={item} />}
             keyExtractor={item => item.id}
           />

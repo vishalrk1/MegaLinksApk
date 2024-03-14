@@ -1,22 +1,27 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {
+  ActivityIndicator,
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {AppColors} from '../../utils/Constants';
 import CatPageHeader from '../../components/CatPageHeader';
-import { fetchProjectFileAction } from '../../redux/actions/getProjectFileAction';
+import {fetchProjectFileAction} from '../../redux/actions/getProjectFileAction';
 
 const ProjectfilesScreen = ({route, navigation}) => {
   const {catId, catName, catImageUrl, catDescription} = route.params;
-  const {projectFiles, fetching, error} = useSelector(state => state.getProjectFiles);
+  const {projectFiles, fetching, error} = useSelector(
+    state => state.getProjectFiles,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProjectFileAction());
   }, []);
-
-  console.log('projectFiles', projectFiles);
-  console.log('fetching', fetching);
-
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <View style={styles.pageSectionStyle}>
@@ -26,6 +31,27 @@ const ProjectfilesScreen = ({route, navigation}) => {
           catDescription={catDescription}
         />
       </View>
+      {fetching ? (
+        <View
+          style={{
+            height: '50%',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <ActivityIndicator
+            size={50}
+            color={AppColors.orangeBg}
+            style={{height: 100, width: 100}}
+          />
+        </View>
+      ) : (
+        projectFiles.length === 0 && (
+          <Text style={{color: AppColors.orangeBg, fontSize: 20}}>
+            Project files will be added soon
+          </Text>
+        )
+      )}
     </SafeAreaView>
   );
 };

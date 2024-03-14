@@ -34,14 +34,16 @@ const TutorialsScreen = ({route, navigation}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchEditingTools());
-    dispatch(fetchTutorials());
+    if (tutorials.length === 0 && editingTools.length === 0) {
+      dispatch(fetchTutorials(catId));
+      dispatch(fetchEditingTools());
+    }
   }, []);
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     setFilteredTuts(filterTutorials(selectedToolId, tutorials));
-    setIsLoading(false)
+    setIsLoading(false);
   }, [tutorials, selectedToolId]);
 
   const filterTutorials = (toolId, tutList) => {

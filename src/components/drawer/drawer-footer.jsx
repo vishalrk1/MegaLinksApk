@@ -18,7 +18,7 @@ const DrawerFooter = () => {
   return (
     <View
       style={{
-        flex: 0.4,
+        flex: 0.2,
         // justifyContent: 'center',
         // alignItems: 'center',
         width: '100%',
@@ -26,14 +26,6 @@ const DrawerFooter = () => {
         borderTopWidth: 1,
         paddingTop: 10,
       }}>
-      <DrawerListItem
-        bgColor={'white'}
-        icon={<Settings size={20} color={'black'} />}
-        nameTitle="Settings"
-        titleColor="black"
-        fontWeight='bold'
-        onPress={() => {}}
-      />
       <DrawerListItem
         bgColor={'white'}
         icon={<Share2 size={20} color={'black'} />}

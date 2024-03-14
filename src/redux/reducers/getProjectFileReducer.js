@@ -3,7 +3,7 @@ import { FETCH_PROJECT_FILE_FAILURE, FETCH_PROJECT_FILE_REQUESTB, FETCH_PROJECT_
 
 const initialState = {
   projectFiles: [],
-  fetching: false,
+  fetching: true,
   error: null,
   uploading: false,
 };

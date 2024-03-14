@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   scenePacks: [],
-  fetching: false,
+  fetching: true,
   error: null,
   uploading: false,
 };
