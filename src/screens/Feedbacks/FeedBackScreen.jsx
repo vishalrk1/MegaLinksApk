@@ -33,10 +33,12 @@ const FeedbackScreen = () => {
         </Text>
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 15,
             textAlign: 'left',
             marginTop: 4,
             lineHeight: 20,
+            color: 'gray',
+            marginBottom: 12,
           }}>
           {FEDBACK_SCREEN_DESCRIPTION}
         </Text>

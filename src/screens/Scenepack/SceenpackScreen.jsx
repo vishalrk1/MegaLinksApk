@@ -77,16 +77,19 @@ const SceenpackScreen = ({route, navigation}) => {
       <View>
         {showSearchBar && (
           <TextInput
+            autoFocus={true}
             onChangeText={query => setQuery(query)}
             value={query}
+            placeholder="Search"
+            placeholderTextColor="black"
             style={{
               padding: 10,
               paddingHorizontal: 12,
               backgroundColor: 'white',
               marginHorizontal: 12,
               borderRadius: 10,
+              color: 'black'
             }}
-            placeholder="Search"
           />
         )}
       </View>

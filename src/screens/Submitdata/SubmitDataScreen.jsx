@@ -38,7 +38,7 @@ const SubmitDataScreen = () => {
           }}>
           Share Your Packs with us 😎!
         </Text>
-        <Text style={{fontSize: 16, fontWeight: '500'}}>
+        <Text style={{fontSize: 16, fontWeight: '500', color: 'gray'}}>
           {SUBMIT_SCREEN_DESCRIPTION}
         </Text>
         {FORMS_TILE_DATA.map((item, index) => (
