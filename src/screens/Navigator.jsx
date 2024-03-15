@@ -82,6 +82,7 @@ export const StackNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName={'HomeDrawer'}
+      unmountInactiveRoutes={true}
       screenOptions={{
         headerStyle: {
           backgroundColor: AppColors.blueBg,

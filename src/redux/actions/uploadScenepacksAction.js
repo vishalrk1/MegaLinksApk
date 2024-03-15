@@ -10,7 +10,6 @@ export const uploadScenepack = packData => async dispatch => {
     type: UPLOAD_SCENE_PACK_REQUEST,
   });
   try {
-    console.log([packData]);
     const {data, error} = await supabase
       .from('Scenepack')
       .insert([{...packData}])

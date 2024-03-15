@@ -10,7 +10,11 @@ export const fetchAnimeRaw = () => async dispatch => {
     type: FETCH_ANIME_RAWS_REQUEST,
   });
   try {
-    let {data: Animepack, error} = await supabase.from('Animepack').select('*');
+    let {data: Animepack, error} = await supabase
+      .from('Animepack')
+      .select('*')
+      .order('isFeatured', {ascending: false})
+      .order('createdAt', {ascending: false});
     if (error) throw error;
     dispatch({
       type: FETCH_ANIME_RAWS_SUCCESS,

@@ -11,7 +11,10 @@ export const fetchTutorials = () => async dispatch => {
     type: FETCH_TUTORIALS_REQUEST,
   });
   try {
-    let {data: Tutorial, error} = await supabase.from('Tutorial').select('*');
+    let {data: Tutorial, error} = await supabase
+      .from('Tutorial')
+      .select('*')
+      .order('createdAt', {ascending: false});
     if (error) throw error;
     dispatch({
       type: FETCH_TUTORIALS_SUCCESS,

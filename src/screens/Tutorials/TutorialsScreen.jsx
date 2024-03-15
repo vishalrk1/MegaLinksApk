@@ -40,7 +40,7 @@ const TutorialsScreen = ({route, navigation}) => {
 
   useEffect(() => {
     if (tutorials.length === 0 && editingTools.length === 0) {
-      dispatch(fetchTutorials(catId));
+      dispatch(fetchTutorials());
       dispatch(fetchEditingTools());
     }
   }, []);

@@ -1,22 +1,48 @@
-import React, {useState} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import 'react-native-get-random-values';
+import React, {useEffect, useState} from 'react';
+import {v4 as uuidv4} from 'uuid';
+import {useNavigation} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
+
+import {
+  ActivityIndicator,
+  ProgressBarAndroidBase,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import FormCardWrapper from '../../../components/Forms/FormCardWrapper';
 import ErrorMessage from '../../../components/ErrorMessage';
 import CatPageHeader from '../../../components/CatPageHeader';
 import {CATEGORIES_DATA} from '../../../utils/CategoriesData';
 import {AppColors} from '../../../utils/Constants';
+import {uploadTutorial} from '../../../redux/actions/uploadTutorialAction';
+import {fetchEditingTools} from '../../../redux/actions/getEditinToolAction';
+import TutorialFilters from '../../../components/TutorialFilters';
+import {fetchTutorials} from '../../../redux/actions/getTutorialsAction';
 
 const EditingTutorialsFormScreen = () => {
   const category = CATEGORIES_DATA[2];
   const [label, setLabel] = useState('');
   const [ytUrl, setYtUrl] = useState('');
-  const [description, setDescription] = useState('');
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const youtubeRegex =
-    /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/)|youtu\.be\/)[\w\-]{11}$/;
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const {uploading} = useSelector(state => state.uploadTutorial);
+  const {editingTools, fetching: toolsFetching} = useSelector(
+    state => state.getEditingTools,
+  );
+  const [selectedToolId, setSelectedToolId] = useState(
+    'd4fc4557-38b4-4978-b8e5-04e8a0bb52fc',
+  );
+
+  const youtubeRegex_1 = /(?:https?:\/\/)?(?:www\.)?youtube\.com|youtu\.be/;
+  const youtubeRegex_2 =
+    /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}(&\S*)?$/;
   const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
   const handleSubmit = () => {
@@ -25,21 +51,44 @@ const EditingTutorialsFormScreen = () => {
       setError(true);
       setErrorMessage('Please fill all the fields !!');
       return;
-    } else if (!youtubeRegex.test(ytUrl)) {
+    } else if (!youtubeRegex_1.test(ytUrl)) {
+      console.log(ytUrl);
       setError(true);
-      setErrorMessage('Invalid tutorial url');
+      setErrorMessage('Invalid tutorial url :(');
       return;
     }
 
     const payload = {
+      id: uuidv4(),
       label: label,
       ytUrl: ytUrl,
-      description: description,
+      editingToolId: selectedToolId,
       categoryId: '7d4b3674-be06-4bcd-9c9c-d737078bfe93',
       isApproved: true,
       isFeatured: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
+
+    try {
+      dispatch(uploadTutorial(payload));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLabel('');
+      setYtUrl('');
+      setTimeout(() => {
+        dispatch(fetchTutorials());
+        navigation.navigate('EditingTutorialsScreen', {...category});
+      }, 1500);
+    }
   };
+
+  useEffect(() => {
+    if (editingTools.length === 0) {
+      dispatch(fetchEditingTools());
+    }
+  }, []);
 
   return (
     <ScrollView
@@ -59,24 +108,43 @@ const EditingTutorialsFormScreen = () => {
         <FormCardWrapper
           headerTitle="Share Your Pack 🤠"
           onPressSubmit={handleSubmit}>
-          <View style={{flexDirection: 'column', gap: 12}}>
-            <TextInput
-              label="Tutorial Name"
-              mode="outlined"
-              style={styles.nameInput}
-              value={label}
-              onChangeText={setLabel}
-              activeOutlineColor={AppColors.blueBg}
-            />
-            <TextInput
-              mode="outlined"
-              label="Tutorial Link"
-              style={styles.nameInput}
-              value={ytUrl}
-              onChangeText={setYtUrl}
-              activeOutlineColor={AppColors.blueBg}
-            />
-          </View>
+          {uploading ? (
+            <ActivityIndicator size="large" color={AppColors.blueBg} />
+          ) : (
+            <View style={{flexDirection: 'column', gap: 12}}>
+              <TextInput
+                label="Tutorial Name"
+                mode="outlined"
+                style={styles.nameInput}
+                value={label}
+                onChangeText={setLabel}
+                activeOutlineColor={AppColors.blueBg}
+              />
+              <TextInput
+                mode="outlined"
+                label="Tutorial Link"
+                style={styles.nameInput}
+                value={ytUrl}
+                onChangeText={setYtUrl}
+                activeOutlineColor={AppColors.blueBg}
+              />
+              {toolsFetching ? (
+                <ActivityIndicator
+                  size="large"
+                  color="coral"
+                  style={{margin: 10}}
+                />
+              ) : (
+                <TutorialFilters
+                  editingTools={editingTools}
+                  selectedToolId={selectedToolId}
+                  setSelectedToolId={setSelectedToolId}
+                  btnColor={AppColors.blueBg}
+                  txtColor="white"
+                />
+              )}
+            </View>
+          )}
           {error && <ErrorMessage message={errorMessage} />}
         </FormCardWrapper>
       </View>

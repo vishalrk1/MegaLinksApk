@@ -1,8 +1,21 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View} from 'react-native';
-import { AppColors } from '../utils/Constants';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {AppColors} from '../utils/Constants';
 
-const TutorialFilters = ({editingTools, selectedToolId, setSelectedToolId}) => {
+const TutorialFilters = ({
+  editingTools,
+  selectedToolId,
+  setSelectedToolId,
+  btnColor = AppColors.lightpurple,
+  txtColor = 'black',
+}) => {
   return (
     <ScrollView
       horizontal
@@ -23,13 +36,17 @@ const TutorialFilters = ({editingTools, selectedToolId, setSelectedToolId}) => {
               marginHorizontal: 4,
               paddingHorizontal: 20,
               borderRadius: 10,
-              backgroundColor: item.id === selectedToolId ? 'white' : AppColors.lightpurple,
+              backgroundColor:
+                item.id === selectedToolId ? 'white' : btnColor,
               borderWidth: item.id === selectedToolId ? 1 : 0,
               borderColor: 'black',
             }}
             key={index}>
             <Text
-              style={{color: item.id === selectedToolId ? 'black' : 'black', fontWeight: '600'}}>
+              style={{
+                color: item.id === selectedToolId ? 'black' : txtColor,
+                fontWeight: '600',
+              }}>
               {item.title}
             </Text>
           </TouchableOpacity>

@@ -34,7 +34,6 @@ const SceenpackScreen = ({route, navigation}) => {
 
   useEffect(() => {
     if (scenePacks.length === 0) {
-      console.log('getting packs.../');
       dispatch(fetchScenePacks());
     } else {
       setFilteredPacks(scenePacks);
