@@ -10,7 +10,10 @@ export const fetchScenePacks = () => async dispatch => {
     type: FETCH_SCENE_PACKS_REQUEST,
   });
   try {
-    let {data, error} = await supabase.from('Scenepack').select('*');
+    let {data, error} = await supabase
+      .from('Scenepack')
+      .select('*')
+      .order('isFeatured', {ascending: false});
 
     if (error) throw error;
 

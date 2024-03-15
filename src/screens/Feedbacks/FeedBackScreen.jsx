@@ -33,10 +33,10 @@ const FeedbackScreen = () => {
         </Text>
         <Text
           style={{
-            fontSize: 15,
+            fontSize: 14,
             textAlign: 'left',
             marginTop: 4,
-            lineHeight: 20,
+            lineHeight: 18,
             color: 'gray',
             marginBottom: 12,
           }}>

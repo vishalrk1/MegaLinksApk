@@ -3,14 +3,17 @@ import {
   FETCH_USER_FEEDBACKS_REQUEST,
   FETCH_USER_FEEDBACKS_SUCCESS,
 } from '../ActionTypes';
-import { supabase } from '../supabaseClient';
+import {supabase} from '../supabaseClient';
 
 export const fetchUserFeedbackAction = () => async dispatch => {
   dispatch({
     type: FETCH_USER_FEEDBACKS_REQUEST,
   });
   try {
-    let {data: Feedback, error} = await supabase.from('Feedback').select('*');
+    let {data: Feedback, error} = await supabase
+      .from('Feedback')
+      .select('*')
+      .order('isFeatured', {ascending: false});
     if (error) throw error;
     dispatch({
       type: FETCH_USER_FEEDBACKS_SUCCESS,

@@ -1,15 +1,18 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, TouchableHighlight} from 'react-native';
+import {ScrollView, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View} from 'react-native';
+import { AppColors } from '../utils/Constants';
 
 const TutorialFilters = ({editingTools, selectedToolId, setSelectedToolId}) => {
   return (
     <ScrollView
       horizontal
-      style={{height: 60, marginBottom: 12, paddingHorizontal: 12}}
+      style={{height: 44, marginBottom: 12, paddingHorizontal: 8}}
       showsHorizontalScrollIndicator={false}>
       {editingTools.map((item, index) => {
         return (
-          <TouchableHighlight
+          <TouchableOpacity
+            disabled={item.id === selectedToolId}
+            activeOpacity={0.9}
             onPress={() => setSelectedToolId(item.id)}
             style={{
               display: 'flex',
@@ -17,21 +20,22 @@ const TutorialFilters = ({editingTools, selectedToolId, setSelectedToolId}) => {
               alignItems: 'center',
               justifyContent: 'center',
               padding: 4,
-              marginHorizontal: 8,
+              marginHorizontal: 4,
               paddingHorizontal: 20,
               borderRadius: 10,
-              backgroundColor: item.id === selectedToolId ? 'white' : 'black',
+              backgroundColor: item.id === selectedToolId ? 'white' : AppColors.lightpurple,
               borderWidth: item.id === selectedToolId ? 1 : 0,
               borderColor: 'black',
             }}
             key={index}>
             <Text
-              style={{color: item.id === selectedToolId ? 'black' : 'white'}}>
+              style={{color: item.id === selectedToolId ? 'black' : 'black', fontWeight: '600'}}>
               {item.title}
             </Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
         );
       })}
+      <View style={{width: 16}} />
     </ScrollView>
   );
 };

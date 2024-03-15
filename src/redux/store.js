@@ -16,4 +16,9 @@ export const store = configureStore({
     getFeedbacks: getFeedbacksReducer,
     getAnimeRaws: getAnimeRawsReducer,
   },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      immutableCheck: {warnAfter: 128},
+      serializableCheck: {warnAfter: 128},
+    }),
 });

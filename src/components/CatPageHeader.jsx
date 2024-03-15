@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     color: AppColors.black,
     marginLeft: 10,
     marginTop: 4,
-    color: ''
+    color: 'black',
   },
   pageDescriptionText: {
     fontSize: 15,
