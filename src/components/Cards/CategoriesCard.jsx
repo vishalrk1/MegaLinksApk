@@ -9,10 +9,7 @@ const CategoriesCard = ({catItem}) => {
     <Pressable
       onPress={() =>
         navigation.navigate(catItem.screenName, {
-          catId: catItem.id,
-          catName: catItem.name,
-          catImageUrl: catItem.imageUrl,
-          catDescription: catItem.description,
+          ...catItem,
         })
       }>
       <View style={styles.container}>

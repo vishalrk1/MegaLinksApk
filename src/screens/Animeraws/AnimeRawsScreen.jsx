@@ -16,7 +16,12 @@ import {fetchAnimeRaw} from '../../redux/actions/getAnimeDataAction';
 import AnimeRawCard from '../../components/Cards/AnimeRawCard';
 
 const AnimeRawsScreen = ({route, navigation}) => {
-  const {catId, catName, catImageUrl, catDescription} = route.params;
+  const {
+    id: catId,
+    name: catName,
+    imageUrl: catImageUrl,
+    description: catDescription,
+  } = route.params;
   const dispatch = useDispatch();
   const {animeRaws, fetching} = useSelector(state => state.getAnimeRaws);
 

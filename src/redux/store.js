@@ -6,6 +6,7 @@ import {editingToolsReducer} from './reducers/getEditingToolReducer';
 import {getFeedbacksReducer} from './reducers/getFeedbacksReducer';
 import {getProjectFileReducer} from './reducers/getProjectFileReducer';
 import {getAnimeRawsReducer} from './reducers/getAnimeRawsReducer';
+import { uploadScenePackReducer } from './reducers/uploafScenepackReducer';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     getProjectFiles: getProjectFileReducer,
     getFeedbacks: getFeedbacksReducer,
     getAnimeRaws: getAnimeRawsReducer,
+    uploadScenepack: uploadScenePackReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

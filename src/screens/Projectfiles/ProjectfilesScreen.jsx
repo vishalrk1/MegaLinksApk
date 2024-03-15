@@ -13,7 +13,12 @@ import CatPageHeader from '../../components/CatPageHeader';
 import {fetchProjectFileAction} from '../../redux/actions/getProjectFileAction';
 
 const ProjectfilesScreen = ({route, navigation}) => {
-  const {catId, catName, catImageUrl, catDescription} = route.params;
+  const {
+    id: catId,
+    name: catName,
+    imageUrl: catImageUrl,
+    description: catDescription,
+  } = route.params;
   const {projectFiles, fetching, error} = useSelector(
     state => state.getProjectFiles,
   );

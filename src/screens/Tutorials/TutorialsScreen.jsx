@@ -21,7 +21,12 @@ import {fetchEditingTools} from '../../redux/actions/getEditinToolAction';
 import TutorialFilters from '../../components/TutorialFilters';
 
 const TutorialsScreen = ({route, navigation}) => {
-  const {catId, catName, catImageUrl, catDescription} = route.params;
+  const {
+    id: catId,
+    name: catName,
+    imageUrl: catImageUrl,
+    description: catDescription,
+  } = route.params;
   const {tutorials, fetching, error} = useSelector(state => state.getTutorials);
   const {editingTools, fetching: toolsFetching} = useSelector(
     state => state.getEditingTools,

@@ -8,7 +8,6 @@ const initialState = {
   scenePacks: [],
   fetching: true,
   error: null,
-  uploading: false,
 };
 
 export const scenePackReducer = (state = initialState, action) => {

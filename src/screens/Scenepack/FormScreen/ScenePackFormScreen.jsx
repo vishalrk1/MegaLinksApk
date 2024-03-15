@@ -1,11 +1,24 @@
 import React, {useState} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  ActivityIndicator,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import FormCardWrapper from '../../../components/Forms/FormCardWrapper';
 import ErrorMessage from '../../../components/ErrorMessage';
 import CatPageHeader from '../../../components/CatPageHeader';
 import {CATEGORIES_DATA} from '../../../utils/CategoriesData';
-import { AppColors } from '../../../utils/Constants';
+import {AppColors} from '../../../utils/Constants';
+import {uploadScenepack} from '../../../redux/actions/uploadScenepacksAction';
+
+import 'react-native-get-random-values';
+import {v4 as uuidv4} from 'uuid';
+import {useNavigation} from '@react-navigation/native';
+import {fetchScenePacks} from '../../../redux/actions/scenepackAction';
 
 const ScenePackFormScreen = () => {
   const category = CATEGORIES_DATA[0];
@@ -16,6 +29,10 @@ const ScenePackFormScreen = () => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const {uploading} = useSelector(state => state.uploadScenepack);
+
   const imageExtensionRegex = /\.(png|jpg)$/;
   const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
@@ -25,7 +42,10 @@ const ScenePackFormScreen = () => {
       setError(true);
       setErrorMessage('Please fill all the fields !!');
       return;
-    } else if (!imageExtensionRegex.test(imageUrl)) {
+    } else if (
+      !imageExtensionRegex.test(imageUrl) &&
+      !urlRegex.test(imageUrl)
+    ) {
       setError(true);
       setErrorMessage('Incorrect Image Link !!');
       return;
@@ -36,13 +56,26 @@ const ScenePackFormScreen = () => {
     }
 
     const payload = {
+      id: uuidv4(),
       label: label,
       packUrl: packUrl,
       imageUrl: imageUrl,
       credit: credit,
-      categoryId: 'd5ce972f-6454-4638-a765-c9adf9e6094b',
+      categoryId: '653ead2e-ba7d-4bb9-8dbf-cfd392ee6815', // 653ead2e-ba7d-4bb9-8dbf-cfd392ee6815
       isApproved: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
+
+    try {
+      dispatch(uploadScenepack(payload));
+      setTimeout(() => {
+        dispatch(fetchScenePacks());
+        navigation.navigate('ScenePackScreen', {...category});
+      }, 1500);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -50,7 +83,7 @@ const ScenePackFormScreen = () => {
       style={{
         flex: 1,
         backgroundColor: '#fff',
-        paddingHorizontal: 4
+        paddingHorizontal: 4,
       }}>
       <View style={{...styles.cardStyle, flex: 1}}>
         <CatPageHeader
@@ -63,40 +96,44 @@ const ScenePackFormScreen = () => {
         <FormCardWrapper
           headerTitle="Share Your Pack 🤠"
           onPressSubmit={handleSubmit}>
-          <View style={{flexDirection: 'column', gap: 12}}>
-            <TextInput
-              label="Character Name"
-              mode="outlined"
-              style={styles.nameInput}
-              value={label}
-              onChangeText={setLabel}
-              activeOutlineColor={AppColors.blueBg}
-            />
-            <TextInput
-              mode="outlined"
-              label="Scenepack link"
-              style={styles.nameInput}
-              value={packUrl}
-              onChangeText={setPackUrl}
-              activeOutlineColor={AppColors.blueBg}
-            />
-            <TextInput
-              label="Image Link"
-              mode="outlined"
-              style={styles.nameInput}
-              value={imageUrl}
-              onChangeText={setImageUrl}
-              activeOutlineColor={AppColors.blueBg}
-            />
-            <TextInput
-              label="Credits"
-              mode="outlined"
-              style={styles.nameInput}
-              value={credit}
-              onChangeText={setCredit}
-              activeOutlineColor={AppColors.blueBg}
-            />
-          </View>
+          {!uploading ? (
+            <View style={{flexDirection: 'column', gap: 12}}>
+              <TextInput
+                label="Character Name"
+                mode="outlined"
+                style={styles.nameInput}
+                value={label}
+                onChangeText={setLabel}
+                activeOutlineColor={AppColors.blueBg}
+              />
+              <TextInput
+                mode="outlined"
+                label="Scenepack link"
+                style={styles.nameInput}
+                value={packUrl}
+                onChangeText={setPackUrl}
+                activeOutlineColor={AppColors.blueBg}
+              />
+              <TextInput
+                label="Image Link"
+                mode="outlined"
+                style={styles.nameInput}
+                value={imageUrl}
+                onChangeText={setImageUrl}
+                activeOutlineColor={AppColors.blueBg}
+              />
+              <TextInput
+                label="Credits"
+                mode="outlined"
+                style={styles.nameInput}
+                value={credit}
+                onChangeText={setCredit}
+                activeOutlineColor={AppColors.blueBg}
+              />
+            </View>
+          ) : (
+            <ActivityIndicator size="large" color={AppColors.blueBg} />
+          )}
           {error && <ErrorMessage message={errorMessage} />}
         </FormCardWrapper>
       </View>

@@ -19,7 +19,12 @@ import {Appbar} from 'react-native-paper';
 import {Search} from 'lucide-react-native';
 
 const SceenpackScreen = ({route, navigation}) => {
-  const {catId, catName, catImageUrl, catDescription} = route.params;
+  const {
+    id: catId,
+    name: catName,
+    imageUrl: catImageUrl,
+    description: catDescription,
+  } = route.params;
   const dispatch = useDispatch();
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
@@ -88,7 +93,7 @@ const SceenpackScreen = ({route, navigation}) => {
               backgroundColor: 'white',
               marginHorizontal: 12,
               borderRadius: 10,
-              color: 'black'
+              color: 'black',
             }}
           />
         )}
