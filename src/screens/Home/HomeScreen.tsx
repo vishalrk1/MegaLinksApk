@@ -10,6 +10,9 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.backgroundStyle}>
       <View style={styles.headingSectionStyle}>
         <Text style={styles.headingTextStyle}>MEGA LINKS</Text>
+        <Text style={{fontSize: 16, color: 'white'}}>
+          Unlock your video editing potential with Megalinks!
+        </Text>
       </View>
       <CategoriesSection />
     </SafeAreaView>

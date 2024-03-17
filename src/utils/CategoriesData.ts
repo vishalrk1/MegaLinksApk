@@ -54,12 +54,12 @@ export const FORMS_TILE_DATA = [
     description: 'Tutorial name, tutorial link are required',
     screenName: 'EditingTutorialsFormScreen',
   },
-  {
-    id: '4',
-    title: 'Submit Project Files',
-    description: 'Project name, file link are required',
-    screenName: 'ProjectFilesFormScreen',
-  },
+  // {
+  //   id: '4',
+  //   title: 'Submit Project Files',
+  //   description: 'Project name, file link are required',
+  //   screenName: 'ProjectFilesFormScreen',
+  // },
 ] as FormTile[];
 
 export const FEEDBACK_FORMS_TILE_DATA = [

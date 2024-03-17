@@ -13,7 +13,8 @@ export const fetchUserFeedbackAction = () => async dispatch => {
     let {data: Feedback, error} = await supabase
       .from('Feedback')
       .select('*')
-      .order('isFeatured', {ascending: false});
+      .order('isFeatured', {ascending: false})
+      .order('createdAt', {ascending: false});
     if (error) throw error;
     dispatch({
       type: FETCH_USER_FEEDBACKS_SUCCESS,

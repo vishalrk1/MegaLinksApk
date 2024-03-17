@@ -48,11 +48,11 @@ const TutorialsScreen = ({route, navigation}) => {
   useEffect(() => {
     setIsLoading(true);
     setFilteredTuts(filterTutorials(selectedToolId, tutorials));
-    setIsLoading(false);
   }, [tutorials, selectedToolId]);
-
+  
   const filterTutorials = (toolId, tutList) => {
     const newList = tutList.filter(item => item.editingToolId === toolId);
+    setIsLoading(false);
     return newList;
   };
 
@@ -71,7 +71,7 @@ const TutorialsScreen = ({route, navigation}) => {
           selectedToolId={selectedToolId}
           setSelectedToolId={setSelectedToolId}
         />
-        {fetching && isLoading ? (
+        {fetching ? (
           <View
             style={{
               height: '100%',

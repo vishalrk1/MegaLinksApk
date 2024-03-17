@@ -17,7 +17,9 @@ const UserFeedbackScreen = () => {
   const {feedbacks, fetching} = useSelector(state => state.getFeedbacks);
 
   useEffect(() => {
-    dispatch(fetchUserFeedbackAction());
+    if (feedbacks.length === 0) {
+      dispatch(fetchUserFeedbackAction());
+    }
   }, []);
 
   return (

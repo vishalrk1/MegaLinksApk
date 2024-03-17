@@ -9,6 +9,7 @@ import {getAnimeRawsReducer} from './reducers/getAnimeRawsReducer';
 import {uploadScenePackReducer} from './reducers/uploafScenepackReducer';
 import {uploadTutorialReducer} from './reducers/uploadTutorialReducer';
 import {uploadAnimeRawReducer} from './reducers/uploadAnimeRawReducer';
+import {uploadFeedbackReducer} from './reducers/uploadFeedbackReducer';
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +22,7 @@ export const store = configureStore({
     uploadScenepack: uploadScenePackReducer,
     uploadTutorial: uploadTutorialReducer,
     uploadAnimeRaw: uploadAnimeRawReducer,
+    uploadFeedback: uploadFeedbackReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

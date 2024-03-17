@@ -73,6 +73,12 @@ const ScenePackFormScreen = () => {
         dispatch(fetchScenePacks());
         navigation.navigate('ScenePackScreen', {...category});
       }, 1500);
+      setLabel('');
+      setPackUrl('');
+      setImageUrl('');
+      setCredit('');
+      setError(false);
+      setErrorMessage('');
     } catch (error) {
       console.log(error);
     }

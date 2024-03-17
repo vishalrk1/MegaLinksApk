@@ -25,8 +25,9 @@ const ProjectfilesScreen = ({route, navigation}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProjectFileAction());
+    // dispatch(fetchProjectFileAction());
   }, []);
+  
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <View style={styles.pageSectionStyle}>
@@ -35,28 +36,33 @@ const ProjectfilesScreen = ({route, navigation}) => {
           catImageUrl={catImageUrl}
           catDescription={catDescription}
         />
-      </View>
-      {fetching ? (
-        <View
-          style={{
-            height: '50%',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <ActivityIndicator
-            size={50}
-            color={AppColors.orangeBg}
-            style={{height: 100, width: 100}}
-          />
-        </View>
-      ) : (
-        projectFiles.length === 0 && (
-          <Text style={{color: AppColors.orangeBg, fontSize: 20}}>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={{color: 'black', fontSize: 20}}>
             Project files will be added soon
           </Text>
-        )
-      )}
+        </View>
+        {/* {fetching ? (
+          <View
+            style={{
+              height: '50%',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <ActivityIndicator
+              size={50}
+              color={AppColors.orangeBg}
+              style={{height: 100, width: 100}}
+            />
+          </View>
+        ) : (
+          projectFiles.length === 0 && (
+            <Text style={{color: AppColors.orangeBg, fontSize: 20}}>
+              Project files will be added soon
+            </Text>
+          )
+        )} */}
+      </View>
     </SafeAreaView>
   );
 };
