@@ -17,10 +17,17 @@ Megalinks is an android app where we provide free resources available for video 
 ## App UI
 
 <div style="display: flex; flex-direction: row; gap:10px;>
-    <img src="screenshots/img-1.png" width="125" />
-    <img src="screenshots/img-2.png" width="125" />
-    <img src="screenshots/img-3.png" width="125"/>
-    <img src="screenshots/img-4.png" width="125" />
-    <img src="screenshots/img-5.png" width="125" />
-    <img src="screenshots/img-6.png" width="125" />
+    <img src="screenshots/img-1.png" width="150" />
+    <img src="screenshots/img-2.png" width="150" />
+    <img src="screenshots/img-3.png" width="150"/>
+    <img src="screenshots/img-4.png" width="150" />
+    <img src="screenshots/img-5.png" width="150" />
+    <img src="screenshots/img-6.png" width="150" />
+    <img src="screenshots/img-7.png" width="150" />
+    <img src="screenshots/img-8.png" width="150" />
+    <img src="screenshots/img-9.png" width="150" />
+    <img src="screenshots/img-10.png" width="150" />
+    <img src="screenshots/img-11.png" width="150" />
+    <img src="screenshots/img-12.png" width="150" />
+    <img src="screenshots/img-13.png" width="150" />
 </div>
