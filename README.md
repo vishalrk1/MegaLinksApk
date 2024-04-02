@@ -7,6 +7,7 @@ Megalinks is an android app where we provide free resources available for video 
     </a>
 
 ## Features
+
 - Smoothe UI Experience
 - Search scene packs by Actor name
 - Find Movie scene pack, Anime scenes, Project files and preset packs
@@ -15,17 +16,11 @@ Megalinks is an android app where we provide free resources available for video 
 
 ## App UI
 
-
-
-| <img align="left" alt="Home Screen" src="screenshots/img-1.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="screenshots/img-2.png" width="250px" /> | <img align="left" alt="Login Screen" src="screenshots/img-3.png" width="250px" /> | <img align="left" alt="Dashboard" src="screenshots/img-4.png" width="250px" /> |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-
-| <img align="left" alt="Home Screen" src="screenshots/img-5.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="screenshots/img-6.png" width="250px" /> | <img align="left" alt="Login Screen" src="screenshots/img-7.png" width="250px" /> | <img align="left" alt="Dashboard" src="screenshots/img-8.png" width="250px" /> |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-| <img align="left" alt="Home Screen" src="screenshots/img-9.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="screenshots/img-10.png" width="250px" /> | <img align="left" alt="Login Screen" src="screenshots/img-11.png" width="250px" /> | <img align="left" alt="Dashboard" src="screenshots/img-12.png" width="250px" /> |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-| <img align="left" alt="Home Screen" src="screenshots/img-13.png" width="250px" /> |
-
+<div style="display: flex; flex-direction: row; gap:10px;>
+    <img src="screenshots/img-1.png" width="125" />
+    <img src="screenshots/img-2.png" width="125" />
+    <img src="screenshots/img-3.png" width="125"/>
+    <img src="screenshots/img-4.png" width="125" />
+    <img src="screenshots/img-5.png" width="125" />
+    <img src="screenshots/img-6.png" width="125" />
+</div>
