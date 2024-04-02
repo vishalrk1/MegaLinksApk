@@ -1,79 +1,34 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# MegaLinks
 
-# Getting Started
+Megalinks is an android app where we provide free resources available for video editing, like Scenepacks, project files of the big editor, tutorials, etc..
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+<a href="https://play.google.com/store/apps/details?id=com.vk.MegaLinks" target="_blank">
+        <img alt="App Link" src="https://img.shields.io/badge/Playstore Link-%23F37626.svg?style=for-the-badge&logo=android&logoColor=white" />&nbsp; 
+    </a>
 
-## Step 1: Start the Metro Server
+## Features
+- Smoothe UI Experience
+- Search scene packs by Actor name
+- Find Movie scene pack, Anime scenes, Project files and preset packs
+- Request for packs
+- Upload your material
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## App UI
 
-To start Metro, run the following command from the _root_ of your React Native project:
 
-```bash
-# using npm
-npm start
 
-# OR using Yarn
-yarn start
-```
+| <img align="left" alt="Home Screen" src="screenshots/img-1.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="https://user-images.githubusercontent.com/59719046/135311126-4ab9e616-fcc8-49bd-b81f-b473abeaf4f0.png" width="250px" /> | <img align="left" alt="Login Screen" src="https://user-images.githubusercontent.com/59719046/135311152-a6aacb42-cd2d-48af-bc1b-697b58019718.png" width="250px" /> | <img align="left" alt="Dashboard" src="https://user-images.githubusercontent.com/59719046/135311267-89ee207b-995f-4292-b153-1739e933ea0e.png" width="250px" /> |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-## Step 2: Start your Application
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+| <img align="left" alt="Home Screen" src="https://user-images.githubusercontent.com/59719046/135311431-22c55611-72b3-4f6e-8ff6-067d28cdc9d8.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="https://user-images.githubusercontent.com/59719046/135311650-51fcfae8-99c3-4a3d-86ea-70c1edbe5938.png" width="250px" /> | <img align="left" alt="Login Screen" src="https://user-images.githubusercontent.com/59719046/135311673-e4d5e510-3c0c-4d05-be24-17c4fe059cef.png" width="250px" /> | <img align="left" alt="Dashboard" src="https://user-images.githubusercontent.com/59719046/135311677-3f0c600b-b734-453b-9d74-7ca3ba0ed694.png" width="250px" /> |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-### For Android
+| <img align="left" alt="Home Screen" src="https://user-images.githubusercontent.com/59719046/135311686-4e5da0c8-ba30-40d6-8549-e437e9cef07e.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="https://user-images.githubusercontent.com/59719046/135311690-05a79bc2-8db3-4638-9f24-f65d1eea7e5b.png" width="250px" /> | <img align="left" alt="Login Screen" src="https://user-images.githubusercontent.com/59719046/135311694-85f34287-130c-498c-9947-fb81841c16a0.png" width="250px" /> | <img align="left" alt="Dashboard" src="https://user-images.githubusercontent.com/59719046/135311700-fb8824e2-925c-47e1-a3b4-b3194ee25efe.png" width="250px" /> |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-```bash
-# using npm
-npm run android
+| <img align="left" alt="Home Screen" src="https://user-images.githubusercontent.com/59719046/135311708-9caef476-7f29-4480-b60f-416316c67831.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="https://user-images.githubusercontent.com/59719046/135311711-bee89417-a5ad-4af5-8c59-313fb87baac3.png" width="250px" /> | <img align="left" alt="Login Screen" src="https://user-images.githubusercontent.com/59719046/135311717-ca45d281-4c39-4ccd-9805-b60075d8939f.png" width="250px" /> | <img align="left" alt="Dashboard" src="https://user-images.githubusercontent.com/59719046/135311729-d3604273-e9f9-4a23-9568-be907c18ab84.png" width="250px" /> |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+| <img align="left" alt="Home Screen" src="https://user-images.githubusercontent.com/59719046/135311739-d3756271-73d3-49b7-a740-1c7f4b58f53b.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="https://user-images.githubusercontent.com/59719046/135311660-1e827c57-e5fc-49b3-9cad-9e8606027043.png" width="250px" /> |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | 

@@ -9,7 +9,6 @@ import BootSplash from "react-native-bootsplash";
 
 function App(): React.JSX.Element {
   return (
-    // <PaperProvider>
     <Provider store={store}>
       <NavigationContainer onReady={() => {
         BootSplash.hide({ fade: true })
