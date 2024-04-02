@@ -17,7 +17,7 @@ Megalinks is an android app where we provide free resources available for video 
 
 
 
-| <img align="left" alt="Home Screen" src="screenshots/img-1.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="https://user-images.githubusercontent.com/59719046/135311126-4ab9e616-fcc8-49bd-b81f-b473abeaf4f0.png" width="250px" /> | <img align="left" alt="Login Screen" src="https://user-images.githubusercontent.com/59719046/135311152-a6aacb42-cd2d-48af-bc1b-697b58019718.png" width="250px" /> | <img align="left" alt="Dashboard" src="https://user-images.githubusercontent.com/59719046/135311267-89ee207b-995f-4292-b153-1739e933ea0e.png" width="250px" /> |
+| <img align="left" alt="Home Screen" src="screenshots/img-1.png" width="250px" /> | <img align="left" alt="Welcome Screen" src="screenshots/img-2.png" width="250px" /> | <img align="left" alt="Login Screen" src="screenshots/img-3.png" width="250px" /> | <img align="left" alt="Dashboard" src="screenshots/img-4.png" width="250px" /> |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
